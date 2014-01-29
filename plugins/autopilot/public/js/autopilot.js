@@ -1,7 +1,6 @@
 PILOT_ACCELERATION = 0.04;
 
 
-var up = 0;
 
 (function(window, document, $, undefined) {
         'use strict';
@@ -10,7 +9,7 @@ var up = 0;
         /*
          * Constructuor
          */
-        var autoPilot = function autoPilot(cockpit, oscServer) {
+        var autoPilot = function autoPilot(cockpit) {
 
 
                 console.log("Loading autopilot plugin.");
@@ -18,9 +17,11 @@ var up = 0;
                 this.speed = 0;
                 this.moving = false;
                 this.list = {}
+                
                
                 // Register the various event handlers
-                this.listen();
+               // this.listen();
+                //this.receiveOsc();
 
                 // Setup a timer to send motion command
                 var self = this;
@@ -29,22 +30,7 @@ var up = 0;
                 
         };
 
-        /*
-         * Register keyboard event listener
-         */
-        autoPilot.prototype.listen = function listen() {
-                var pilot = this;
-                $(document).keydown(function(ev) {
-                        //pilot.keyDown(ev);
-                });
 
-                $(document).keyup(function(ev) {
-                        //pilot.keyUp(ev);
-                });
-
-        };
-
-       
 
         
 

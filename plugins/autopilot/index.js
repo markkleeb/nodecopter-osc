@@ -4,38 +4,40 @@ var osc = require('node-osc/lib/osc.js')
   , util = require('util')
   ;
 
+
 var oscServer = new osc.Server(10000, '/drone');
 
-
-
+var up = 0;
+var message;
 
 //var oscTimer = setInterval(checkOsc, 100);
 
 
 
 
-function checkOsc(oscServer){
 
 
-
-}
 
 function autoPilot(name, deps) {
     deps.io.sockets.on('connection', function (socket) {
-        
-         oscServer.on("message", function (msg, rinfo) {
+
+      oscServer.on("message", function (msg, rinfo) {
+              
+               
                 console.log("Message:");
                 console.log(msg);  
                 console.log(msg[2][1]);
 
-          if(msg[2][1] == '1'){
-         
-              }
-            else{
-            console.log("fail");   
+                if(msg[2][1] == '1'){
+                  console.log("success");
+                  up = 1;
+                  socket.emit('/pilot/drone', { action: "takeoff" });
 
-             }
-        });
+                  }
+               
+
+              });
+
 
         socket.on('/pilot/move', function (cmd) {
             var _name;
