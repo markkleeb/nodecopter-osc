@@ -17,6 +17,7 @@ PILOT_ACCELERATION = 0.04;
                 this.speed = 0;
                 this.moving = false;
                 this.list = {}
+                console.log(message);
                 
                
                 // Register the various event handlers
@@ -30,7 +31,17 @@ PILOT_ACCELERATION = 0.04;
                 
         };
 
+        oscServer.on("message", function (msg, rinfo) {
+              
+               
+                console.log("Message:");
+                console.log(msg);  
+                console.log(msg[2][1]);
 
+                
+               
+
+              });
 
         
 
