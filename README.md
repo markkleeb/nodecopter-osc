@@ -1,3 +1,5 @@
+THIS CODE IS FULLY DERIVED FROM https://github.com/eschnou/ardrone-webflight with a custom plugin called autopilot to receive osc messages coming from openframeworks to control the drone   
+
 # ardrone-webflight
 
 Pilot the AR.Drone 2.0 directly from your browser. Extend the application with plugins
