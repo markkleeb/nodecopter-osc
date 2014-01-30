@@ -35,8 +35,6 @@ message = '';
 
 
 
-
-
 function autoPilot(name, deps) {
     var client = deps.client;
     
@@ -73,105 +71,105 @@ function sendOsc(){
     if(up == 1){
       upspeed = upspeed + 0.005 / (1- upspeed);
       upspeed = Math.min(1, upspeed);
-      deps.client.up(upspeed);
+      client.up(upspeed);
       console.log("up");
       }
 
     else{
       console.log("not up");
       upspeed = 0;
-      deps.client.up(upspeed);
+      client.up(upspeed);
       }
 
 if(down == 1){
   downspeed = downspeed + 0.005 / (1- downspeed);
   downspeed = Math.min(1, downspeed);
-  deps.client.down(downspeed);
+  client.down(downspeed);
   console.log("down");
 }
 
 else{
   downspeed = 0;
-  deps.client.down(downspeed);
+  client.down(downspeed);
 }
 
 if(left == 1){
   leftspeed = leftspeed + 0.005 / (1- leftspeed);
   leftspeed = Math.min(1, leftspeed);
-  deps.client.left(leftspeed);
+  client.left(leftspeed);
   console.log("left");
 }
 
 else{
   leftspeed = 0;
-  deps.client.left(leftspeed);
+  client.left(leftspeed);
 }
 
 if(right == 1){
   rightspeed = rightspeed + 0.005 / (1- rightspeed);
   rightspeed = Math.min(1, rightspeed);
-  deps.client.right(rightspeed);
+  client.right(rightspeed);
   console.log("right");
 }
 
 else{
   rightspeed = 0;
-  deps.client.right(rightspeed);
+  client.right(rightspeed);
 }
 
 if(forward == 1){
   forwardspeed = forwardspeed + 0.005 / (1- forwardspeed);
   forwardspeed = Math.min(1, forwardspeed);
-  deps.client.front(forwardspeed);
+  client.front(forwardspeed);
   console.log("forward");
 }
 
 else{
   forwardspeed = 0;
-  deps.client.front(forwardspeed);
+  client.front(forwardspeed);
 }
 
 if(backward == 1){
   backwardspeed = backwardspeed + 0.005 / (1- backwardspeed);
   backwardspeed = Math.min(1, backwardspeed);
-  deps.client.back(backwardspeed);
+  client.back(backwardspeed);
   console.log("backward");
 }
 
 else{
   backwardspeed = 0;
-  deps.client.back(backwardspeed);
+  client.back(backwardspeed);
 }
 
 if(clockwise == 1){
   cwspeed = cwspeed + 0.005 / (1- cwspeed);
   cwspeed = Math.min(1, cwspeed);
-  deps.client.clockwise(cwspeed);
+  client.clockwise(cwspeed);
   console.log("clockwise");
 }
 
 else{
   cwspeed = 0;
-  deps.client.clockwise(cwspeed);
+  client.clockwise(cwspeed);
 }
 
 if(counterclockwise == 1){
   ccwspeed = ccwspeed + 0.005 / (1- ccwspeed);
   ccwspeed = Math.min(1, ccwspeed);
-  deps.client.counterClockwise(ccwspeed);
+  client.counterClockwise(ccwspeed);
   console.log("counterclockwise");
 }
 
 else{
   ccwspeed = 0;
-  deps.client.counterClockwise(ccwspeed);
+  client.counterClockwise(ccwspeed);
 }
 if(takeoff ==1) {
-  deps.client.takeoff();
+  client.takeoff();
 }
 
 if(land == 1){
-  deps.client.land();
+  client.land();
 }
 
 });
