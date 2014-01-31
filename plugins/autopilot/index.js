@@ -76,7 +76,7 @@ function sendOsc(){
       }
 
     else{
-      console.log("not up");
+      //console.log("not up");
       upspeed = 0;
       client.up(upspeed);
       }
@@ -172,7 +172,7 @@ if(land == 1){
   client.land();
 }
 
-});
+};
 
       
   
