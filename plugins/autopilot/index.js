@@ -71,7 +71,7 @@ function autoPilot(name, deps) {
                   }
 
                  }
-                  if(msg[2][2] == 1){ 
+                  if(msg[2][2] == 1 && downspeed < 1){ 
                     downspeed = downspeed + 0.001 / (1- downspeed);
                      downspeed = Math.min(1, downspeed);
 if (ldownspeed != downspeed) { ldownspeed = downspeed;
@@ -88,7 +88,7 @@ if (ldownspeed != downspeed) { ldownspeed = downspeed;
                     console.log("down off");
 }
                  }
-                  if(msg[2][3] == 1){ 
+                  if(msg[2][3] == 1 && leftspeed < 1){ 
                     leftspeed = leftspeed + 0.001 / (1- leftspeed);
                      leftspeed = Math.min(1, leftspeed);
 if (lleftspeed != leftspeed) { lleftspeed = leftspeed;
@@ -104,7 +104,7 @@ if (lleftspeed != leftspeed) { lleftspeed = leftspeed;
                     console.log("left off");
 }
                   }
-                  if(msg[2][4] == 1){ 
+                  if(msg[2][4] == 1 && rightspeed < 1){ 
                     rightspeed = rightspeed + 0.001 / (1- rightspeed);
                   rightspeed = Math.min(1, rightspeed);
 if (lrightspeed != rightspeed) { lrightspeed = rightspeed;
@@ -120,7 +120,7 @@ if (lrightspeed != rightspeed) { lrightspeed = rightspeed;
                   console.log("right off");
 }
                   }
-                  if(msg[2][5] == 1){ 
+                  if(msg[2][5] == 1 && forwardspeed < 1){ 
                      forwardspeed = forwardspeed + 0.01 / (1- forwardspeed);
                     forwardspeed = Math.min(1, forwardspeed);
 if (lforwardspeed != forwardspeed) { lforwardspeed = forwardspeed;
@@ -137,7 +137,7 @@ if (lforwardspeed != forwardspeed) { lforwardspeed = forwardspeed;
 
 }
                   }
-                if(msg[2][6] == 1){ 
+                if(msg[2][6] == 1 && backwardspeed < 1){ 
                   backwardspeed = backwardspeed + 0.005 / (1- backwardspeed);
                   backwardspeed = Math.min(1, backwardspeed);
 if (lbackwardspeed != backwardspeed) { lbackwardspeed = backwardspeed;
@@ -153,7 +153,7 @@ if (lbackwardspeed != backwardspeed) { lbackwardspeed = backwardspeed;
                   console.log("backward off");
 }
                   }
-                  if(msg[2][7] == 1){ 
+                  if(msg[2][7] == 1 && cwspeed < 1){ 
                     cwspeed = cwspeed + 0.005 / (1- cwspeed);
                     cwspeed = Math.min(1, cwspeed);
 if (lcwspeed != cwspeed) { lcwspeed = cwspeed;
@@ -170,7 +170,7 @@ if (lcwspeed != cwspeed) { lcwspeed = cwspeed;
 }
 
                   }
-                 if(msg[2][8] == 1){ 
+                 if(msg[2][8] == 1 && ccwspeed < 1){ 
                   ccwspeed = ccwspeed + 0.005 / (1- ccwspeed);
                   ccwspeed = Math.min(1, ccwspeed);
 if (lccwspeed != ccwspeed) { lccwspeed = ccwspeed;
