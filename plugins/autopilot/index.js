@@ -27,6 +27,7 @@ var up = 0
 ,lleftspeed=0
 ,lccwspeed=0
 ,lcwspeed=0
+,lstop= 0
     ;
 
 var upspeed = 0
@@ -56,7 +57,7 @@ function autoPilot(name, deps) {
 
                  if(msg[2][1] == 1 && upspeed < 1){ 
 
-                  upspeed = upspeed + 0.005 / (1- upspeed);
+                  upspeed = upspeed + 0.01 / (1- upspeed);
                   upspeed = Math.min(1, upspeed);
                   if (lupspeed != upspeed) { lupspeed = upspeed;
                   client.up(upspeed);
@@ -72,7 +73,7 @@ function autoPilot(name, deps) {
 
                  }
                   if(msg[2][2] == 1 && downspeed < 1){ 
-                    downspeed = downspeed + 0.005 / (1- downspeed);
+                    downspeed = downspeed + 0.01 / (1- downspeed);
                      downspeed = Math.min(1, downspeed);
 if (ldownspeed != downspeed) { ldownspeed = downspeed;
 
@@ -89,7 +90,7 @@ if (ldownspeed != downspeed) { ldownspeed = downspeed;
 }
                  }
                   if(msg[2][3] == 1 && leftspeed < 1){ 
-                    leftspeed = leftspeed + 0.005 / (1- leftspeed);
+                    leftspeed = leftspeed + 0.01 / (1- leftspeed);
                      leftspeed = Math.min(1, leftspeed);
 if (lleftspeed != leftspeed) { lleftspeed = leftspeed;
                       client.left(leftspeed);
@@ -105,7 +106,7 @@ if (lleftspeed != leftspeed) { lleftspeed = leftspeed;
 }
                   }
                   if(msg[2][4] == 1 && rightspeed < 1){ 
-                    rightspeed = rightspeed + 0.005 / (1- rightspeed);
+                    rightspeed = rightspeed + 0.01 / (1- rightspeed);
                   rightspeed = Math.min(1, rightspeed);
 if (lrightspeed != rightspeed) { lrightspeed = rightspeed;
                   client.right(rightspeed);
@@ -121,7 +122,7 @@ if (lrightspeed != rightspeed) { lrightspeed = rightspeed;
 }
                   }
                   if(msg[2][5] == 1 && forwardspeed < 1){ 
-                     forwardspeed = forwardspeed + 0.005 / (1- forwardspeed);
+                     forwardspeed = forwardspeed + 0.001 / (1- forwardspeed);
                     forwardspeed = Math.min(1, forwardspeed);
 if (lforwardspeed != forwardspeed) { lforwardspeed = forwardspeed;
                    client.front(forwardspeed);
@@ -138,7 +139,7 @@ if (lforwardspeed != forwardspeed) { lforwardspeed = forwardspeed;
 }
                   }
                 if(msg[2][6] == 1 && backwardspeed < 1){ 
-                  backwardspeed = backwardspeed + 0.005 / (1- backwardspeed);
+                  backwardspeed = backwardspeed + 0.01 / (1- backwardspeed);
                   backwardspeed = Math.min(1, backwardspeed);
 if (lbackwardspeed != backwardspeed) { lbackwardspeed = backwardspeed;
                   client.back(backwardspeed);
@@ -154,7 +155,7 @@ if (lbackwardspeed != backwardspeed) { lbackwardspeed = backwardspeed;
 }
                   }
                   if(msg[2][7] == 1 && cwspeed < 1){ 
-                    cwspeed = cwspeed + 0.005 / (1- cwspeed);
+                    cwspeed = cwspeed + 0.01 / (1- cwspeed);
                     cwspeed = Math.min(1, cwspeed);
 if (lcwspeed != cwspeed) { lcwspeed = cwspeed;
                     client.clockwise(cwspeed);
@@ -171,7 +172,7 @@ if (lcwspeed != cwspeed) { lcwspeed = cwspeed;
 
                   }
                  if(msg[2][8] == 1 && ccwspeed < 1){ 
-                  ccwspeed = ccwspeed + 0.005 / (1- ccwspeed);
+                  ccwspeed = ccwspeed + 0.01 / (1- ccwspeed);
                   ccwspeed = Math.min(1, ccwspeed);
 if (lccwspeed != ccwspeed) { lccwspeed = ccwspeed;
                   client.counterClockwise(ccwspeed);
@@ -203,8 +204,9 @@ if (lccwspeed != ccwspeed) { lccwspeed = ccwspeed;
                  }
                  
                  if(msg[2][11] == 1){ 
+                  if (lstop != stop) { lstop = stop;
                     console.log("stop");
-                   client.stop();
+                   client.stop();}
                  }
                  
                  if(msg[2][12] ==1){
