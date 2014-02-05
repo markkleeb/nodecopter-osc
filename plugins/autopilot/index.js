@@ -204,9 +204,9 @@ if (lccwspeed != ccwspeed) { lccwspeed = ccwspeed;
                  }
                  
                  if(msg[2][11] == 1){ 
-                  if (lstop != stop) { lstop = stop;
+                 
                     console.log("stop");
-                   client.stop();}
+                   client.stop();
                  }
                  
                  if(msg[2][12] ==1){

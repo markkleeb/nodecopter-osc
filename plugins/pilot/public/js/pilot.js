@@ -1,4 +1,4 @@
-PILOT_ACCELERATION = 0.04;
+PILOT_ACCELERATION = 0.005;
 
 (function(window, document, $, undefined) {
         'use strict';
@@ -147,7 +147,7 @@ PILOT_ACCELERATION = 0.04;
         Pilot.prototype.keyDown = function keyDown(ev) {
                 console.log("Keydown: " + ev.keyCode);
                 if (ev.keyCode == 9) {
-                  PILOT_ACCELERATION = (PILOT_ACCELERATION == 0.04) ? 0.64 : 0.04;
+                  PILOT_ACCELERATION = (PILOT_ACCELERATION == 0.005) ? 0.005 : 0.005 ;
                   console.log("PILOT_ACCELERATION: " + PILOT_ACCELERATION);
                   ev.preventDefault();
                   return;
@@ -238,7 +238,7 @@ PILOT_ACCELERATION = 0.04;
                     });
 
                     // Update the speed
-                    this.keys[k] = this.keys[k] + PILOT_ACCELERATION / (1 - this.keys[k]);
+                    this.keys[k] = this.keys[k] + 0.02 / (1 - this.keys[k]);
                     this.keys[k] = Math.min(1, this.keys[k]);
                 }
         }
