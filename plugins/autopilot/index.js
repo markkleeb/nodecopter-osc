@@ -215,14 +215,15 @@ if (lccwspeed != ccwspeed) { lccwspeed = ccwspeed;
                  }
 
                  if(msg[2][13]==1){
+                  console.log("turning around");
 
-client
-  .after(1000, function() {
-    this.clockwise(1);
-  })
-  .after(2000, function() {
-    this.stop();
-  });
+                  client
+                    .after(1000, function() {
+                    this.clockwise(1);
+                                             })
+                    .after(2000, function() {
+                     this.stop();
+                                            });
 
                  }
                
