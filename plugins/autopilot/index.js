@@ -214,7 +214,7 @@ if (lccwspeed != ccwspeed) { lccwspeed = ccwspeed;
                    console.log("emergency");
                  }
 
-                 if(msg[2][13]==1){
+                 if(msg[2][13]== 1){
                   console.log("turning around");
 
                   client
