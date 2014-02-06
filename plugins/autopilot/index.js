@@ -213,6 +213,18 @@ if (lccwspeed != ccwspeed) { lccwspeed = ccwspeed;
                   client.disableEmergency()
                    console.log("emergency");
                  }
+
+                 if(msg[2][13]==1){
+
+client
+  .after(1000, function() {
+    this.clockwise(1);
+  })
+  .after(2000, function() {
+    this.stop();
+  });
+
+                 }
                
 
               });
